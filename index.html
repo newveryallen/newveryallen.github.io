@@ -1,10 +1,70 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
 
-<hr>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<h3>https://pages.github.com/<h3>
+<style type="text/css">
+
+ #goToForm {	
+	margin-top: 50px;
+ }
+
+ #circle {
+	background-color:red;
+ }
  
- <hr>
-  
-<h3>getting start github.io</h3>
-<p>http://facebook.github.io/regenerator/</p>
+ #logoZone {
+	margin-top:20px;
+ }
+ 
+ #topBar {
+	 text-align: center;
+ }
+</style>
+
+</head>
+<body>
+
+<div id="topBar">
+	<a href="">Project1</a>
+	<a href="">Project2</a>
+	<a href="">Project3</a>
+	<a href="">Project4</a>
+<div>
+
+<img src="" width="180" height="200" alt="Image preview...">
+<br>
+<input type="file" onchange="previewFile()"><br>
+
+
+<script>
+   function previewFile(){
+       var preview = document.querySelector('img'); //selects the query named img
+       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+       var reader  = new FileReader();
+
+       reader.onloadend = function () {
+           preview.src = reader.result;
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+       } else {
+           preview.src = "";
+       }
+   }
+
+  previewFile();  //calls the function named previewFile()
+</script>
+
+<div id="circle"></div>
+
+<div id="logoZone">
+<a href="https://github.com/newveryallen"><img src="img/github.png" alt="github" height="42" width="42"></a>
+<a href="https://www.linkedin.com/in/jiashen-huang-ba926944/"><img src="img/linkedin.png" alt="linkedin" height="42" width="42"></a>
+</div>
+<a href="form.html"><p id="goToForm">go to form</p></a>
+
+</body>
+</html>
